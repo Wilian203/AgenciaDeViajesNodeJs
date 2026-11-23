@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "name": "agencia-de-viajes",
+  "version": "1.0.0",
+  "description": "Agencia de Viajes con Node-Express-React",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Wilian Marinez",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6",
+    "pug": "^3.0.4",
+    "sequelize": "^6.37.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

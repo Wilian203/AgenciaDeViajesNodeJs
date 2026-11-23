@@ -1,0 +1,46 @@
+extends ./layout/index
+
+block contenido
+    main(class="container mt-5")
+        h1(class="text-center") #{pagina}
+        div(class="row proximos-viajes")
+            each viaje in viajes
+                div(class="col-md-6 col-lg-4 mb-5")
+                    div(class="card")
+                        img( class="card-image-top" src=`/img/destinos_${viaje.imagen}.jpg`, alt="destinos")
+                        div(class="card-body")
+                        h2=viaje.titulo
+                        div(class="d-flex align-items-center mb-2")
+                            
+                            svg(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewBox='0 0 24 24', fill='none', stroke='#d13b2e', stroke-width='2', stroke-linecap='round', stroke-linejoin='round')
+                                path(d='M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12')
+                                path(d='M16 3v4')
+                                path(d='M8 3v4')
+                                path(d='M4 11h16')
+                                path(d='M7 14h.013')
+                                path(d='M10.01 14h.005')
+                                path(d='M13.01 14h.005')
+                                path(d='M16.015 14h.005')
+                                path(d='M13.015 17h.005')
+                                path(d='M7.01 17h.005')
+                                path(d='M10.01 17h.005')
+                            p(class="m-0")
+                                | #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+                        
+                        div(class="d-flex align-items-center")
+                            svg(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewBox='0 0 24 24', fill='none', stroke='#d13b2e', stroke-width='2', stroke-linecap='round', stroke-linejoin='round')
+                                path(d='M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0')
+                                path(d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
+                            p(class="m-0")
+                                | #{viaje.disponibles}
+
+                        p 
+                            | #{viaje.descripcion.substr(0,100) + "..."}
+                        
+                        a(href=`viajes/${viaje.slug}` class="btn btn-success btn-block") Mas informacion
+                            
+                                                        
+
+                      
+      
+        
